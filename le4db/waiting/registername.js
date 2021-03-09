@@ -1,0 +1,92 @@
+function addString(str){
+    var trg=document.getElementById("name_field").value;
+    switch(str){
+        case "小字":
+            var map=new Map([
+                ["ア","ァ"],
+                ["ァ","ア"],
+                ["イ","ィ"],
+                ["ィ","イ"],
+                ["ウ","ゥ"],
+                ["ゥ","ウ"],
+                ["エ","ェ"],
+                ["ェ","エ"],
+                ["オ","ォ"],
+                ["ォ","オ"],
+                ["ツ","ッ"],
+                ["ッ","ツ"],
+                ["ヤ","ャ"],
+                ["ャ","ヤ"],
+                ["ユ","ュ"],
+                ["ュ","ユ"],
+                ["ヨ","ョ"],
+                ["ョ","ヨ"]
+            ]);
+            if(trg.length>0&&map.has(trg.substr(-1,1))){
+                document.getElementById("name_field").value=trg.substr(0,trg.length-1)+map.get(trg.substr(-1,1));
+            }
+            break;
+        case "゛゜":
+            var map=new Map([
+                ["カ","ガ"],
+                ["ガ","カ"],
+                ["キ","ギ"],
+                ["ギ","キ"],
+                ["ク","グ"],
+                ["グ","ク"],
+                ["ケ","ゲ"],
+                ["ゲ","ケ"],
+                ["コ","ゴ"],
+                ["ゴ","コ"],
+                ["サ","ザ"],
+                ["ザ","サ"],
+                ["シ","ジ"],
+                ["ジ","シ"],
+                ["ス","ズ"],
+                ["ズ","ス"],
+                ["セ","ゼ"],
+                ["ゼ","セ"],
+                ["ソ","ゾ"],
+                ["ゾ","ソ"],
+                ["タ","ダ"],
+                ["ダ","タ"],
+                ["チ","ヂ"],
+                ["ヂ","チ"],
+                ["ツ","ヅ"],
+                ["ヅ","ツ"],
+                ["テ","デ"],
+                ["デ","テ"],
+                ["ト","ド"],
+                ["ド","ト"],
+                ["ハ","バ"],
+                ["バ","パ"],
+                ["パ","ハ"],
+                ["ヒ","ビ"],
+                ["ビ","ピ"],
+                ["ピ","ヒ"],
+                ["フ","ブ"],
+                ["ブ","プ"],
+                ["プ","フ"],
+                ["ヘ","ベ"],
+                ["ベ","ペ"],
+                ["ペ","ヘ"],
+                ["ホ","ボ"],
+                ["ボ","ポ"],
+                ["ポ","ホ"]
+            ]);
+            if(trg.length>0&&map.has(trg.substr(-1,1))){
+                document.getElementById("name_field").value=trg.substr(0,trg.length-1)+map.get(trg.substr(-1,1));
+            }
+            break;
+        case "消す":
+            if(trg.length>0){
+                document.getElementById("name_field").value=trg.substr(0,trg.length-1);
+            }
+            break;
+        default:
+            if(trg.length<10){
+                document.getElementById("name_field").value += str;
+            }
+    }
+    document.getElementById("submit").disabled=(document.getElementById("name_field").value.length==0);
+}

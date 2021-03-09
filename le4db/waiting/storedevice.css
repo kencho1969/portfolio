@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+th, td {
+  font-size: 25px;
+}
+
+input[type="submit"] {
+  font-size: 35px;
+  margin: 10px;
+}
+
+input[type="button"] {
+  font-size: 30px;
+}
+
+input[type="text"] {
+  font-size: 30px;
+}
+
+.button-radio input[type="radio"] {
+  display:none; 
+}
+  
+.button-radio label {
+  display:inline-block;
+  color:#fff;
+  background-color:#285a94;
+  font-size: xx-large;
+  padding:30px 45px;
+}
+  
+.button-radio input[type="radio"]:checked + label { 
+  background-color:rgb(119, 152, 212);
+}
